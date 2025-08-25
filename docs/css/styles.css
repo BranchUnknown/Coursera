@@ -23,7 +23,7 @@ h1 {
 /* Section box styling */
 .section {
   border: 1px solid #000;
-  background-color: #f9f9f9;
+  background-color: #aaaaaa;
   padding: 40px 15px 15px;
   position: relative;
   margin: 10px;
@@ -41,6 +41,20 @@ h1 {
   font-size: 1.1em;
   margin: 0;
   line-height: 1;
+}
+
+/* Specific label colors */
+.title.beef {
+  background-color: #c0392b;
+}
+
+.title.chicken {
+  background-color: #f0c20a; 
+  color: #000;
+}
+
+.title.sushi {
+  background-color: #3498db; 
 }
 
 /* Desktop: 3 columns */
