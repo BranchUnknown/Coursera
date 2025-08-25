@@ -14,21 +14,12 @@ h1 {
   text-align: center;
 }
 
-/* Container for all sections */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* space between boxes */
-  padding: 20px;
-}
-
-/* Each box */
 .section {
   border: 1px solid #000;
   padding: 40px 15px 15px;
   position: relative;
   background-color: #f9f9f9;
-  flex: 1 1 100%; /* default: full width on mobile */
+  margin: 10px; /* <-- added spacing between boxes */
 }
 
 .title {
@@ -42,16 +33,35 @@ h1 {
   font-size: 1.1em;
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-  .section {
-    flex: 1 1 calc(50% - 20px); /* two per row */
-  }
-}
-
 /* Desktop */
 @media (min-width: 992px) {
   .section {
-    flex: 1 1 calc(33.33% - 20px); /* three per row */
+    float: left;
+    width: calc(33.33% - 20px); /* subtract margin space */
   }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    float: left;
+    width: calc(50% - 20px);
+  }
+  .section:nth-child(3) {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    width: 100%;
+  }
+}
+
+/* Clear floats so container wraps around sections */
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
 }
