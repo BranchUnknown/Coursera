@@ -1,2 +1,2 @@
 # Coursera
-Repository for peer graded assignments 
+Module 3 Coding Assignment 
