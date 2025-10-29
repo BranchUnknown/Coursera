@@ -1,14 +1,11 @@
-/* Prevent horizontal scroll */
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
 html, body {
   overflow-x: hidden;
-}
-
-/* Styling for the tall section */
-.section {
-  background-color: #e6e6e6;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Navbar custom styling */
@@ -34,11 +31,19 @@ html, body {
 @media (max-width: 767px) {
   .navbar-collapse {
     background-color: #d9d9d9;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
   .navbar-collapse .nav > li > a {
     color: #333333;
   }
+}
+
+/* Section styling */
+.section {
+  background-color: #e6e6e6;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
