@@ -30,11 +30,19 @@ html, body {
 
 /* Mobile dropdown menu styling */
 @media (max-width: 767px) {
-  
-    /* FIX 1: Scrollbar Fix (removes Bootstrap padding) */
+    
+    /* SCROLLBAR FIX: Keeps the navbar menu full width (Must target .container-fluid) */
     .container-fluid {
         padding-right: 0 !important;
         padding-left: 0 !important;
+    }
+    
+    /* ⭐ FINAL FIX: RESTORE PADDING TO THE MAIN CONTENT CONTAINER (.container) ⭐ */
+    .container {
+        /* This re-introduces Bootstrap's default 15px margin/padding on content */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important; 
     }
     
     /* TARGETING THE COLLAPSED MENU CONTAINER */
