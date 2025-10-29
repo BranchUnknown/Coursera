@@ -3,20 +3,21 @@
   box-sizing: border-box;
 }
 
+/* Base layout settings */
 html, body {
   margin: 0;
   padding: 0;
 }
 
-/* Navbar custom styling */
+/* Navbar custom styling (Applies to desktop and header) */
 .navbar-custom {
-  background-color: #003366;
+  background-color: #003366; /* DARK BLUE header background */
   border: none;
   margin-bottom: 0;
 }
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a {
-  color: #ffffff;
+  color: #ffffff; /* WHITE text color for the brand/desktop links */
 }
 
 /* Ensure navbar and dropdown span full width */
@@ -29,34 +30,52 @@ html, body {
 
 /* Mobile dropdown menu styling */
 @media (max-width: 767px) {
+  
     /* FIX 1: Remove Bootstrap's default 15px horizontal padding from the container */
+    /* This is critical for the scrollbar fix and full-width alignment */
     .container-fluid {
         padding-right: 0;
         padding-left: 0;
     }
     
-    /* FIX 2: Ensure the inner navigation list (ul.nav) does not have any margin */
-    /* We leave the padding alone to let the text have internal spacing */
+    /* Ensure the inner navigation list (ul.nav) does not have any horizontal margin/padding */
     .navbar-collapse .nav {
-        margin: 0; /* Ensures list doesn't cause overflow */
+        margin: 0;
+        padding: 0;
+        /* Ensure the entire menu list has the light gray background */
+        background-color: #d9d9d9; 
     }
 
-    /* COLOR RESTORED: Background color for the collapsed menu */
+    /* COLOR & STRUCTURE FIX: Background color for the collapsed menu container */
     .navbar-collapse {
-      background-color: #d9d9d9; 
+      background-color: #d9d9d9; /* LIGHT GRAY background */
       width: 100%;
       margin: 0;
       padding: 0;
     }
 
-    /* COLOR RESTORED: Text color for the mobile links */
+    /* STRUCTURE FIX: Style for the list items (the rows) */
+    .navbar-collapse .nav > li {
+        /* Add the thin divider line between the menu items */
+        border-bottom: 1px solid #616161; /* Darker gray line */
+        /* Ensure the last item doesn't have a bottom border */
+        background-color: #d9d9d9; /* Light gray background for the row */
+    }
+    .navbar-collapse .nav > li:last-child {
+        border-bottom: none; 
+    }
+    
+    /* COLOR & ALIGNMENT FIX: Style for the links (the text) */
     .navbar-collapse .nav > li > a {
-      color: #333333; /* Dark gray text color */
-      /* Ensure text spans full width for better touch targets */
+      color: #333333; /* DARK GRAY text color */
+      
+      /* Essential for full-width touch targets */
       width: 100%; 
       box-sizing: border-box;
-      /* Restore link padding lost by previous changes */
-      padding-left: 30px; 
+      display: block; /* Makes the <a> tag take up full width of the li */
+      
+      /* Restore or adjust padding for text alignment */
+      padding-left: 15px; /* Default Bootstrap left padding */
       padding-right: 15px; 
       padding-top: 10px;
       padding-bottom: 10px;
