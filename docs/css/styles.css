@@ -3,17 +3,9 @@
   box-sizing: border-box;
 }
 html, body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-}
-
-/* Styling for the tall section */
-.section {
-  background-color: #e6e6e6;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
 }
 
 /* Navbar custom styling */
@@ -35,12 +27,6 @@ html, body {
   padding: 0;
 }
 
-/* Remove padding from container-fluid */
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 /* Mobile dropdown menu styling */
 @media (max-width: 767px) {
   .navbar-collapse {
@@ -54,7 +40,10 @@ html, body {
   }
 }
 
-/* Prevent any element from overflowing */
-img, iframe, table, div, nav, ul, li, a {
-  max-width: 100%;
+/* Section styling */
+.section {
+  background-color: #e6e6e6;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
