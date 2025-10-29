@@ -37,12 +37,11 @@ html, body {
         padding-left: 0 !important;
     }
     
-    /* ⭐ FINAL FIX: RESTORE PADDING TO THE MAIN CONTENT CONTAINER (.container) ⭐ */
-    .container {
-        /* This re-introduces Bootstrap's default 15px margin/padding on content */
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        width: 100% !important; 
+    /* FINAL FIX: APPLY MARGIN TO SECTION BOX */
+    .section {
+        margin-left: 15px !important; 
+        margin-right: 15px !important;
+        width: auto !important; 
     }
     
     /* TARGETING THE COLLAPSED MENU CONTAINER */
@@ -87,7 +86,7 @@ html, body {
     }
 }
 
-/* Section styling */
+/* Section styling (desktop/base) */
 .section {
     background-color: #e6e6e6 !important; /* Section background color */
     padding: 30px;
