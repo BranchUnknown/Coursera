@@ -3,9 +3,8 @@
   box-sizing: border-box;
 }
 
-/* FIX: Removed 'overflow-x: hidden' here. 
-   The scrollbar was likely caused by an element inside the body, 
-   and hiding it globally is usually a symptom fix, not the root cause.
+/* CORRECTED: Removed 'overflow-x: hidden' here. 
+   The issue is fixed by targeting the overflowing element directly.
 */
 html, body {
   margin: 0;
@@ -33,30 +32,38 @@ html, body {
 
 /* Mobile dropdown menu styling */
 @media (max-width: 767px) {
+  
+  /* FIX 1: Remove Bootstrap's default 15px horizontal padding from the container */
+  /* This prevents the entire navbar content area from exceeding the viewport width */
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  /* FIX 2: Ensure the inner navigation list (ul.nav) does not have any padding or margin */
+  .navbar-collapse .nav {
+    margin: 0;
+    padding: 0;
+  }
+
   .navbar-collapse {
     background-color: #d9d9d9;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0; /* Ensures the background color covers the full width */
   }
+
   .navbar-collapse .nav > li > a {
     color: #333333;
+    /* Ensure the list item links use the full available width */
+    width: 100%;
+    /* You may need to adjust the padding here if you want space */
+    padding-left: 30px; /* Example: Added some internal padding for text alignment */
   }
   
-  /* FIX: Target the actual dropdown container (.dropdown-menu) 
-     to ensure it does not exceed the viewport width. 
+  /* The dropdown-menu fixes are not needed here since you are using a simple list (ul.nav) 
+     for your mobile menu, not nested dropdowns.
   */
-  .navbar-nav .dropdown-menu {
-    /* Set max width to ensure it stays within the screen boundaries */
-    max-width: 100vw; 
-    /* Set left/right to 0 to align it flush if needed */
-    left: 0; 
-    right: 0;
-    /* Ensure padding/border doesn't cause overflow */
-    box-sizing: border-box;
-    /* For standard Bootstrap menus, set width to auto or 100% of parent */
-    width: auto; 
-  }
 }
 
 /* Section styling */
