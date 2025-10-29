@@ -11,7 +11,7 @@ html, body {
 
 /* Navbar custom styling (Applies to desktop and header) */
 .navbar-custom {
-  background-color: #003366; /* DARK BLUE header background */
+  background-color: #003366; /* DARK BLUE header background (Your darkest color) */
   border: none;
   margin-bottom: 0;
 }
@@ -31,8 +31,7 @@ html, body {
 /* Mobile dropdown menu styling */
 @media (max-width: 767px) {
   
-    /* FIX 1: Remove Bootstrap's default 15px horizontal padding from the container */
-    /* This is critical for the scrollbar fix and full-width alignment */
+    /* FIX 1: Scrollbar Fix (removes Bootstrap padding) */
     .container-fluid {
         padding-right: 0;
         padding-left: 0;
@@ -42,7 +41,7 @@ html, body {
     .navbar-collapse .nav {
         margin: 0;
         padding: 0;
-        /* Ensure the entire menu list has the light gray background */
+        /* Ensure the entire menu list has the light gray background (Your intended menu color) */
         background-color: #d9d9d9; 
     }
 
@@ -56,10 +55,8 @@ html, body {
 
     /* STRUCTURE FIX: Style for the list items (the rows) */
     .navbar-collapse .nav > li {
-        /* Add the thin divider line between the menu items */
-        border-bottom: 1px solid #616161; /* Darker gray line */
-        /* Ensure the last item doesn't have a bottom border */
-        background-color: #d9d9d9; /* Light gray background for the row */
+        border-bottom: 1px solid #616161; 
+        background-color: #d9d9d9; 
     }
     .navbar-collapse .nav > li:last-child {
         border-bottom: none; 
@@ -69,22 +66,29 @@ html, body {
     .navbar-collapse .nav > li > a {
       color: #333333; /* DARK GRAY text color */
       
-      /* Essential for full-width touch targets */
+      /* ADJUSTMENT 1: CENTER ALIGNMENT */
+      text-align: center; 
+      
+      /* Structural properties */
       width: 100%; 
       box-sizing: border-box;
-      display: block; /* Makes the <a> tag take up full width of the li */
+      display: block; 
       
-      /* Restore or adjust padding for text alignment */
-      padding-left: 15px; /* Default Bootstrap left padding */
+      /* Padding for vertical spacing */
+      padding-left: 15px; 
       padding-right: 15px; 
       padding-top: 10px;
       padding-bottom: 10px;
     }
 }
 
+---
+## 📦 Section Styling Adjustment
+
+```css
 /* Section styling */
 .section {
-  background-color: #e6e6e6;
+  background-color: #e6e6e6; /* LIGHTER GRAY background (Your request for a section color) */
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
