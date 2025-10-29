@@ -1,73 +1,51 @@
-/* Global reset */
-* {
-  box-sizing: border-box;
-}
-
-/* Base layout settings */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 /* Navbar custom styling (Applies to desktop and header) */
 .navbar-custom {
-  background-color: #003366; /* DARK BLUE header background (Your darkest color) */
+  background-color: #003366; /* DARK BLUE header background */
   border: none;
   margin-bottom: 0;
 }
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-nav > li > a {
-  color: #ffffff; /* WHITE text color for the brand/desktop links */
-}
-
-/* Ensure navbar and dropdown span full width */
-.navbar,
-.navbar-collapse {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+/* ... rest of your non-media query CSS ... */
 
 /* Mobile dropdown menu styling */
 @media (max-width: 767px) {
   
-    /* FIX 1: Scrollbar Fix (removes Bootstrap padding) */
+    /* SCROLLBAR FIX: Must override Bootstrap's default 15px container padding */
     .container-fluid {
-        padding-right: 0;
-        padding-left: 0;
+        padding-right: 0 !important; /* Use !important to guarantee override */
+        padding-left: 0 !important;
     }
     
-    /* Ensure the inner navigation list (ul.nav) does not have any horizontal margin/padding */
-    .navbar-collapse .nav {
-        margin: 0;
-        padding: 0;
-        /* Ensure the entire menu list has the light gray background (Your intended menu color) */
-        background-color: #d9d9d9; 
-    }
-
-    /* COLOR & STRUCTURE FIX: Background color for the collapsed menu container */
-    .navbar-collapse {
-      background-color: #d9d9d9; /* LIGHT GRAY background */
+    /* TARGETING THE COLLAPSED MENU CONTAINER */
+    .navbar-collapse#navbar-collapse {
+      background-color: #d9d9d9 !important; /* LIGHT GRAY menu background */
       width: 100%;
       margin: 0;
       padding: 0;
     }
+    
+    /* TARGETING THE MENU LIST (UL) */
+    .navbar-collapse#navbar-collapse .nav {
+        margin: 0;
+        padding: 0;
+        background-color: #d9d9d9 !important; /* Double-check background */
+    }
 
-    /* STRUCTURE FIX: Style for the list items (the rows) */
+    /* TARGETING THE MENU ITEMS (LI) */
     .navbar-collapse .nav > li {
+        /* Add the thin divider line between the menu items */
         border-bottom: 1px solid #616161; 
-        background-color: #d9d9d9; 
+        background-color: #d9d9d9;
     }
     .navbar-collapse .nav > li:last-child {
         border-bottom: none; 
     }
     
-    /* COLOR & ALIGNMENT FIX: Style for the links (the text) */
+    /* TARGETING THE MENU LINKS (A) */
     .navbar-collapse .nav > li > a {
-      color: #333333; /* DARK GRAY text color */
+      color: #333333 !important; /* DARK GRAY text color */
       
-      /* ADJUSTMENT 1: CENTER ALIGNMENT */
-      text-align: center; 
+      /* FORCE CENTER ALIGNMENT */
+      text-align: center !important; 
       
       /* Structural properties */
       width: 100%; 
@@ -82,13 +60,9 @@ html, body {
     }
 }
 
----
-## 📦 Section Styling Adjustment
-
-```css
 /* Section styling */
 .section {
-  background-color: #e6e6e6; /* LIGHTER GRAY background (Your request for a section color) */
+  background-color: #e6e6e6; /* LIGHTER GRAY background for the content box */
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
