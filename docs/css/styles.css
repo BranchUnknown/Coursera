@@ -1,17 +1,39 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Base layout settings */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Navbar custom styling (Applies to desktop and header) */
 .navbar-custom {
-  background-color: #003366; /* DARK BLUE header background */
+  background-color: #003366 !important; /* DARK BLUE header background */
   border: none;
   margin-bottom: 0;
 }
-/* ... rest of your non-media query CSS ... */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav > li > a {
+  color: #ffffff !important; /* WHITE text color for the brand/desktop links */
+}
+
+/* Ensure navbar and dropdown span full width */
+.navbar,
+.navbar-collapse {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 /* Mobile dropdown menu styling */
 @media (max-width: 767px) {
   
-    /* SCROLLBAR FIX: Must override Bootstrap's default 15px container padding */
+    /* FIX 1: Scrollbar Fix (removes Bootstrap padding) */
     .container-fluid {
-        padding-right: 0 !important; /* Use !important to guarantee override */
+        padding-right: 0 !important;
         padding-left: 0 !important;
     }
     
@@ -23,16 +45,15 @@
       padding: 0;
     }
     
-    /* TARGETING THE MENU LIST (UL) */
+    /* TARGETING THE MENU LIST (UL) - Secondary background guarantee */
     .navbar-collapse#navbar-collapse .nav {
         margin: 0;
         padding: 0;
-        background-color: #d9d9d9 !important; /* Double-check background */
+        background-color: #d9d9d9 !important; 
     }
 
-    /* TARGETING THE MENU ITEMS (LI) */
+    /* TARGETING THE MENU ITEMS (LI) - Structure and dividers */
     .navbar-collapse .nav > li {
-        /* Add the thin divider line between the menu items */
         border-bottom: 1px solid #616161; 
         background-color: #d9d9d9;
     }
@@ -40,12 +61,10 @@
         border-bottom: none; 
     }
     
-    /* TARGETING THE MENU LINKS (A) */
+    /* TARGETING THE MENU LINKS (A) - Color and Centering */
     .navbar-collapse .nav > li > a {
       color: #333333 !important; /* DARK GRAY text color */
-      
-      /* FORCE CENTER ALIGNMENT */
-      text-align: center !important; 
+      text-align: center !important; /* FORCE CENTER ALIGNMENT */
       
       /* Structural properties */
       width: 100%; 
@@ -62,7 +81,7 @@
 
 /* Section styling */
 .section {
-  background-color: #e6e6e6; /* LIGHTER GRAY background for the content box */
+  background-color: #e6e6e6 !important; /* Section background color */
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
